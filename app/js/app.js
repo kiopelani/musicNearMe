@@ -21,12 +21,13 @@ angular.module('musicNearMe', [])
         $scope.error = $scope.artist + " has no upcoming concerts at this time.";
       }
       else {
+        $scope.artistImage = data[0].artists[0].thumb_url;
         for(var i=0; i < data.length; i++){
           var concert = data[i];
           $scope.concerts.push({
             venue: concert.venue.name,
-            city: concert.venue.city,
-            date: concert.formatted_date,
+            city: concert.formatted_location,
+            date: concert.formatted_datetime,
             ticketStatus: concert.ticket_status,
             ticketUrl: concert.ticket_url
           });
