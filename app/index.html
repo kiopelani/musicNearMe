@@ -25,7 +25,12 @@
 
   <div>
     <h3>Upcoming Concerts</h3>
-    {{ artist }}
+    {{ error }}
+    <ul>
+      <li ng-repeat="concert in concerts">
+        {{ concert.venue }}
+      </li>
+    </ul>
   </div>
 
 </div>
