@@ -1,3 +1,12 @@
 .event {
   border: 1px solid black;
 }
+
+html, body { height: 100%; margin: 0; padding: 0;}
+
+#map-canvas {
+  height: 500px;
+  width: 500px;
+  margin: 0;
+  padding: 0;
+}
