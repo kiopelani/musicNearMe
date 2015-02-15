@@ -16,13 +16,11 @@
 
 
     <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=itsasecretshhh">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4">
     </script>
 
 </head>
-<body>
-
-
+<body ng-controller="MainCtrl">
 
 <div ng-controller="ConcertsCtrl">
   <h1>Music Map</h1>
@@ -31,22 +29,27 @@
     <input type="submit" value="Find">
   </form>
 
-  <div>
+  <div class="content">
     <h2 ng-show="currArtist">{{ currArtist }} - Upcoming Concerts</h2>
     {{ error }}
-    <img ng-src="{{artistImage}}"/>
 
-    <div id="map-canvas"></div>
+    <a href="#/list">list view</a>
+    <a href="#/image">image view</a>
+    <div style="float:left" id="map-canvas"></div>
+    <div style="float:left" ng-view></div>
 
+  <!-- <div id="concert-list">
       <div class="event" ng-repeat="concert in concerts">
-        <!-- format this nicely -->
-        <h4>{{ concert.venue }} - {{ concert.city }}</h4>
+        <h4>{{ concert.title }}</h4>
+        <h5>{{ concert.venue }} - {{ concert.city }}</h5>
         <h5>{{ concert.date }}</h5>
         <h5>Ticket Status:<a ng-show="concert.ticketUrl" href={{concert.tickerUrl}}>
           {{concert.ticketStatus}}
         </a>
         <span ng-hide="concert.ticketUrl">{{concert.ticketStatus}}</span></h5>
       </div>
+  </div> -->
+    <!-- put concerts here -->
   </div>
 </div>
   <!--[if lt IE 7]>
@@ -62,6 +65,12 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-resource.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+
 
 
 
