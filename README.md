@@ -4,5 +4,5 @@ Music Map (formerly musicNearMe) is an Angular.js application that allows you to
 
 Music Map uses the Google Maps and Bandsintown APIs.
 
-### Use Music Map at [http://kiopelani.github.io/blog/Projects/app/index.html](http://kiopelani.github.io/blog/Projects/app/index.html)
+### Use Music Map [here.](http://kiopelani.github.io/blog/Projects/app/index.html)
 
