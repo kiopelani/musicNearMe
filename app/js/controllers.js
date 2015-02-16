@@ -1,10 +1,8 @@
 'use strict';
 
-var controllers = angular.module('musicNearMe.controllers', []);
+var controllers = angular.module('musicMap.controllers', []);
 
-controllers.controller('MainCtrl', function($scope, $location){
-
-});
+controllers.controller('MainCtrl', function($scope){});
 
 controllers.controller('ConcertsCtrl', function($scope, $http, $location, markers){
   $scope.error;

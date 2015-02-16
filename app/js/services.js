@@ -1,6 +1,6 @@
 'use strict';
 
-var services = angular.module('musicNearMe.services', []);
+var services = angular.module('musicMap.services', []);
 
 services.factory('markers', function(){
   var o = {
@@ -36,7 +36,7 @@ services.factory('markers', function(){
 
     marker.setMap(o.map);
     google.maps.event.addListener(marker, 'click', function(){
-      infowindow.open(o.map,marker);
+      infowindow.open(o.map, marker);
     });
   };
 

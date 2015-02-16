@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('musicNearMe', ['musicNearMe.controllers', 'musicNearMe.services', 'ngRoute']);
+var app = angular.module('musicMap', ['musicMap.controllers', 'musicMap.services', 'ngRoute']);
 
 app.config(function ($routeProvider){
   $routeProvider
