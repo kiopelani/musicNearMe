@@ -38,10 +38,11 @@ controllers.controller('ConcertsCtrl', function($scope, $http, $location, marker
     $scope.error = "";
     $scope.currArtist = "";
     $scope.concertView = "";
+    var requestUrl = 'http://api.bandsintown.com/artists/' + $scope.artist + '/events.json?api_version=2.0&app_id=music_map&callback=JSON_CALLBACK'
 
-    $http.jsonp('http://api.bandsintown.com/artists/'+$scope.artist+'/events.json?api_version=2.0&app_id=music_map&callback=JSON_CALLBACK').then(function(response){
+    $http.jsonp(requestUrl)
+    .then(function(response){
         var data = response.data;
-        // console.log(data);
         $scope.displayConcerts(data);
         $scope.artist = "";
     });
@@ -49,21 +50,22 @@ controllers.controller('ConcertsCtrl', function($scope, $http, $location, marker
 
   $scope.displayConcerts = function(data){
     if(data.length < 1){
-          $scope.error = $scope.artist + " has no upcoming concerts at this time.";
-          $scope.showMap = false;
-          $scope.artistImage = "";
-          $scope.concertView = '';
-          $location.path('/');
-        }
-        else {
-          $scope.currArtist = data[0].artists[0].name;
-          $scope.artistImage = data[0].artists[0].image_url;
-          markers.makeMap(data[0].venue.latitude, data[0].venue.longitude);
-          $scope.showMap = true;
-          $scope.addConcerts(data);
-          $scope.concertView = 'main';
-          $location.path('main');
-        }
+      $scope.error = $scope.artist + " has no upcoming concerts at this time.";
+      $scope.showMap = false;
+      $scope.artistImage = '';
+      $scope.concertView = '';
+      $location.path('/');
+    }
+    else {
+      var firstConcert = data[0];
+      $scope.currArtist = firstConcert.artists[0].name;
+      $scope.artistImage = firstConcert.artists[0].image_url;
+      markers.makeMap(firstConcert.venue.latitude, firstConcert.venue.longitude);
+      $scope.showMap = true;
+      $scope.addConcerts(data);
+      $scope.concertView = 'main';
+      $location.path('main');
+    }
   };
 
   $scope.addConcerts = function(data){
