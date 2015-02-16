@@ -16,7 +16,7 @@ controllers.controller('ConcertsCtrl', function($scope, $http, $location, marker
     $scope.concerts = [];
     $scope.error = "";
     $scope.showMap = false;
-    $location.path('/');
+    $location.path('/info');
 
   };
 

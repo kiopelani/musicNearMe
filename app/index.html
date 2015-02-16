@@ -14,14 +14,14 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>  <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=shhhsecret"></script>
 </head>
 
 <body ng-controller="MainCtrl">
 
 <div ng-controller="ConcertsCtrl">
   <div id="nav">
-    <span id="brand" ng-click="reload()"><span class="green">MUSIC</span>MAP</span>
+    <span id="brand" ng-click="reload()"><span class="green">music</span>map</span>
     <form id="search" ng-submit="findConcerts()">
       <input type="text" placeholder="artist" ng-model="artist" placeholder="artist">
       <input id="map-it" type="submit" value="Map It">
@@ -34,7 +34,7 @@
     </div>
     <div ng-show="showMap" id="map-canvas"></div>
     <div class="concert-view" ng-view></div>
-    <button id="view-button" ng-click="toggleView()">GET {{concertView === 'main'? "LIST" : "IMAGE"}} VIEW</button>
+    <button id="view-button" ng-show="concertView" ng-click="toggleView()">GET {{concertView === 'main'? "LIST" : "IMAGE"}} VIEW</button>
     <!-- ng-show="concertView" -->
 
   </div>
