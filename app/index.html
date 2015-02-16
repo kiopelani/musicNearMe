@@ -11,8 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>  <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4"></script>
@@ -30,14 +29,13 @@
   </div>
 
   <div class="content">
-<!--     <h2 ng-show="currArtist">{{ currArtist }} - Upcoming Concerts</h2>
- -->
     <div class="error" ng-show="error">
       {{ error }}
     </div>
     <div ng-show="showMap" id="map-canvas"></div>
     <div class="concert-view" ng-view></div>
-    <button id="view-button" ng-show="concertView" ng-click="toggleView()">Change View</button>
+    <button id="view-button" ng-click="toggleView()">GET {{concertView === 'main'? "LIST" : "IMAGE"}} VIEW</button>
+    <!-- ng-show="concertView" -->
 
   </div>
 </div>

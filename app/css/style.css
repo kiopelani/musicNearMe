@@ -3,10 +3,11 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+  background-color: black;
 }
 
 body {
-  background: url('http://feminspire.com/wp-content/uploads/2012/12/bigstock_silhouettes_of_concert_crowd_i_1565261621.jpg') no-repeat center center fixed;
+  background: url('http://feminspire.com/wp-content/uploads/2012/12/bigstock_silhouettes_of_concert_crowd_i_1565261621.jpg') no-repeat center fixed;
 }
 
 .error {
@@ -84,6 +85,7 @@ body {
 .event {
   padding: 3%;
   border-bottom: 2px solid black;
+  font-family: 'Raleway', sans-serif;
 
 }
 
@@ -108,5 +110,18 @@ body {
 
 
 #view-button {
+  float: left;
   clear: both;
+  color: white;
+  background-color: black;
+  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 40%;
+  margin-right: 40%;
+  width: 20%;
+  border: 2px solid green;
+}
+
+#view-button:hover {
+  border: 2px solid #33cccc;
 }
