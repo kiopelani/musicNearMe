@@ -1,13 +1,10 @@
-
-<div id="concert-list">
+<div ng-show="concerts" id="concert-list">
       <div class="event" ng-repeat="concert in concerts">
         <!-- format this nicely -->
-        <h4>{{ concert.title }}</h4>
-        <h5>{{ concert.venue }} - {{ concert.city }}</h5>
-        <h5>{{ concert.date }}</h5>
-        <h5>Ticket Status:<a ng-show="concert.ticketUrl" ng-href={{concert.ticketUrl}}>
-          {{concert.ticketStatus}}
-        </a>
-        <span ng-hide="concert.ticketUrl">{{concert.ticketStatus}}</span></h5>
+        <div class="event-title">{{ concert.title }}</div>
+        <div class="event-venue">{{ concert.venue }} - {{ concert.city }}</div>
+        <div class="event-date">{{ concert.date }}</div>
+        <div class="event-ticket-status">Ticket Status: <a ng-show="concert.ticketUrl" ng-href={{concert.ticketUrl}}>{{concert.ticketStatus}}</a>
+        <span ng-hide="concert.ticketUrl">{{concert.ticketStatus}}</span></div>
       </div>
 </div>

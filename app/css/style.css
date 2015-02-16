@@ -1,20 +1,112 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background: url('http://feminspire.com/wp-content/uploads/2012/12/bigstock_silhouettes_of_concert_crowd_i_1565261621.jpg') no-repeat center center fixed;
+}
+
+.error {
+  background-color: white;
+  padding: 2%;
+  margin: 15%;
+  text-align: center;
+  font-size: 1.5em;
+}
 
 
-#concert-list {
+#nav {
+  padding: 2%;
+  border: 1px solid black;
+  width: 96%;
+  min-height: 40px;
+  background-color: black;
+}
+
+#brand {
+  font-size: 2em;
+  float: left;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+}
+
+#brand:hover {
+  cursor: pointer;
+  font-size: 2.1em;
+}
+
+#search {
+  float: right;
+  margin-top: 1%;
+}
+
+#map-it {
+}
+
+.green {
+  color: #00cc33;
+}
+
+.content {
+  margin-top: 5%;
+}
+
+.concert-view {
+  float:left;
   width: 500px;
   height: 500px;
-  overflow: scroll;
+  margin: 5%;
+  padding: 0;
+}
+
+#map-canvas {
+  float: left;
+  height: 500px;
+  width: 500px;
+  margin: 5%;
+  padding: 0;
+}
+
+#album-image {
+  width: 100%;
+}
+
+#concert-list {
+  overflow: auto;
+  background-color: white;
+  height: 500px;
+
 }
 
 .event {
-  border: 1px solid black;
+  padding: 3%;
+  border-bottom: 2px solid black;
+
 }
 
-html, body { height: 100%; margin: 0; padding: 0;}
+.event-title {
+  color: #33cccc;
+  font-size: 1.1em;
+  font-family: 'Oswald', sans-serif;
+}
 
-#map-canvas {
-  height: 500px;
-  width: 500px;
-  margin: 0;
-  padding: 0;
+.event-venue {
+
+}
+
+.event-date {
+
+}
+
+.event-ticket-status {
+  font-weight: bold;
+
+}
+
+
+#view-button {
+  clear: both;
 }

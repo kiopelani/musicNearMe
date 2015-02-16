@@ -11,53 +11,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
-
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4">
-    </script>
-
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4"></script>
 </head>
+
 <body ng-controller="MainCtrl">
 
 <div ng-controller="ConcertsCtrl">
-  <h1>Music Map</h1>
-  <form ng-submit="findConcerts()">
-    <input type="text" placeholder="artist" ng-model="artist" placeholder="artist">
-    <input type="submit" value="Find">
-  </form>
+  <div id="nav">
+    <span id="brand" ng-click="reload()"><span class="green">MUSIC</span>MAP</span>
+    <form id="search" ng-submit="findConcerts()">
+      <input type="text" placeholder="artist" ng-model="artist" placeholder="artist">
+      <input id="map-it" type="submit" value="Map It">
+    </form>
+  </div>
 
   <div class="content">
-    <h2 ng-show="currArtist">{{ currArtist }} - Upcoming Concerts</h2>
-    {{ error }}
+<!--     <h2 ng-show="currArtist">{{ currArtist }} - Upcoming Concerts</h2>
+ -->
+    <div class="error" ng-show="error">
+      {{ error }}
+    </div>
+    <div ng-show="showMap" id="map-canvas"></div>
+    <div class="concert-view" ng-view></div>
+    <button id="view-button" ng-show="concertView" ng-click="toggleView()">Change View</button>
 
-    <button ng-show="concertView" ng-click="toggleView()">Change View</button>
-    <!-- <a href="#/list">list view</a>
-    <a href="#/main">main view</a> -->
-    <div style="float:left" id="map-canvas"></div>
-    <div style="float:left" ng-view></div>
-
-  <!-- <div id="concert-list">
-      <div class="event" ng-repeat="concert in concerts">
-        <h4>{{ concert.title }}</h4>
-        <h5>{{ concert.venue }} - {{ concert.city }}</h5>
-        <h5>{{ concert.date }}</h5>
-        <h5>Ticket Status:<a ng-show="concert.ticketUrl" href={{concert.tickerUrl}}>
-          {{concert.ticketStatus}}
-        </a>
-        <span ng-hide="concert.ticketUrl">{{concert.ticketStatus}}</span></h5>
-      </div>
-  </div> -->
-    <!-- put concerts here -->
   </div>
 </div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
-
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -70,11 +56,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
-
-
-
-
-
 
 </body>
 </html>
