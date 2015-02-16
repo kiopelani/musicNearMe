@@ -5,7 +5,7 @@
         <h4>{{ concert.title }}</h4>
         <h5>{{ concert.venue }} - {{ concert.city }}</h5>
         <h5>{{ concert.date }}</h5>
-        <h5>Ticket Status:<a ng-show="concert.ticketUrl" href={{concert.tickerUrl}}>
+        <h5>Ticket Status:<a ng-show="concert.ticketUrl" ng-href={{concert.ticketUrl}}>
           {{concert.ticketStatus}}
         </a>
         <span ng-hide="concert.ticketUrl">{{concert.ticketStatus}}</span></h5>

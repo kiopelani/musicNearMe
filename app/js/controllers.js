@@ -3,9 +3,10 @@ var controllers = angular.module('musicNearMe.controllers', []);
 
 controllers.controller('MainCtrl', function($scope){});
 
-controllers.controller('ConcertsCtrl', function($scope, $http, markers){
+controllers.controller('ConcertsCtrl', function($scope, $http, $location, markers){
   $scope.error;
   $scope.concerts = [];
+  $scope.concertView = "";
 
   $scope.findConcerts = function(){
     if(!$scope.artist || $scope.artist === ""){return;}
@@ -29,6 +30,8 @@ controllers.controller('ConcertsCtrl', function($scope, $http, markers){
         $scope.addConcerts(data);
       }
       $scope.artist = "";
+      $scope.concertView = 'main';
+      $location.path('main');
 
     });
   };
@@ -46,6 +49,17 @@ controllers.controller('ConcertsCtrl', function($scope, $http, markers){
         ticketStatus: concert.ticket_status,
         ticketUrl: concert.ticket_url
       });
+    }
+  };
+
+  $scope.toggleView = function(){
+    if($scope.concertView === 'main'){
+      $location.path('list');
+      $scope.concertView = 'list';
+    }
+    else {
+      $location.path('main');
+      $scope.concertView = 'main';
     }
   };
 

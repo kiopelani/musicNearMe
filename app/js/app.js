@@ -4,8 +4,10 @@
 var app = angular.module('musicNearMe', ['musicNearMe.controllers', 'ngRoute']);
 
 app.config(function ($routeProvider){
-  $routeProvider.when("/list", {controller: "MainCtrl", templateUrl: "partials/concert_list.html"});
-  $routeProvider.when("/image", {controller: "MainCtrl", templateUrl: "partials/image.html"});
+  $routeProvider
+  .when("/main", {controller: "MainCtrl", templateUrl: "partials/image.html"})
+  .when("/list", {controller: "MainCtrl", templateUrl: "partials/concert_list.html"})
+  .otherwise({redirectTo: '/'});
 });
 
 
