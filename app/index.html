@@ -10,36 +10,35 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link href='http://fonts.googleapis.com/css?family=Oswald|Raleway' rel='stylesheet' type='text/css'>  <link rel="stylesheet" href="css/style.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+  <link rel="icon" type="image/png" href="http://www.veryicon.com/icon/png/System/Agua/Music.png">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZuqvikstSD-2NzxDLEIs39bPWji0bBx4"></script>
 </head>
 
 <body ng-controller="MainCtrl">
+  <div ng-controller="ConcertsCtrl">
 
-<div ng-controller="ConcertsCtrl">
-  <div id="nav">
-    <span id="brand" ng-click="reload()"><span class="green">music</span>map</span>
-    <form id="search" ng-submit="findConcerts()">
-      <input type="text" placeholder="artist" ng-model="artist" placeholder="artist">
-      <input id="map-it" type="submit" value="Map It">
-    </form>
-  </div>
-
-  <div class="content">
-    <div class="error" ng-show="error">
-      {{ error }}
+    <div id="nav">
+      <span id="brand" ng-click="reload()"><span class="green">music</span>map</span>
+      <form id="search" ng-submit="findConcerts()">
+        <input type="text" placeholder="artist" ng-model="artist" placeholder="artist">
+        <input id="map-it" type="submit" value="Map It">
+      </form>
     </div>
-    <div ng-show="showMap" id="map-canvas"></div>
-    <div class="concert-view" ng-view></div>
 
-    <button id="view-button" ng-show="concertView" ng-click="toggleView()">
-      GET {{concertView === 'main'? "LIST" : "IMAGE"}} VIEW
-    </button>
+    <div class="content">
+      <div class="error" ng-show="error">
+        {{ error }}
+      </div>
+      <div ng-show="showMap" id="map-canvas"></div>
+      <div class="concert-view" ng-view></div>
+      <button id="view-button" ng-show="concertView" ng-click="toggleView()">
+        GET {{concertView === 'main'? "LIST" : "IMAGE"}} VIEW
+      </button>
+    </div>
 
   </div>
-</div>
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
